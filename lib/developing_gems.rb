@@ -9,7 +9,7 @@ module DevelopingGems
     return if Producing.true?
     gems ||= ENV['DEVELOPING_GEMS']&.split(/\s+/)
     gems ||= default_gems
-    script = development_gems.map { |gem| "#{verb} #{gem.inspect}"}.join("\n")
+    script = gems.map { |gem| "#{verb} #{gem.inspect}"}.join("\n")
     eval(script)
   end
 
